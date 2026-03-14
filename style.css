@@ -172,33 +172,46 @@ nav {
     background: var(--border);
 }
 
-/* Hero Visual */
+/* Hero Visual Parallax */
 .hero-visual {
     flex: 1;
     display: flex;
     justify-content: center;
+    align-items: center;
     position: relative;
+    perspective: 1200px;
 }
 
-.image-container {
+#parallax-container {
     width: 100%;
-    max-width: 500px;
-    border-radius: 40px;
-    overflow: hidden;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
-    border: 1px solid var(--border);
-    transform: perspective(1000px) rotateY(-5deg);
-    transition: transform 0.5s ease;
+    max-width: 550px;
+    height: 550px;
+    position: relative;
+    transform-style: preserve-3d;
 }
 
-.image-container:hover {
-    transform: perspective(1000px) rotateY(0deg) scale(1.02);
+.parallax-layer-back {
+    position: absolute;
+    inset: -50px;
+    background: radial-gradient(circle, rgba(0, 122, 255, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+    z-index: 1;
+    transform: translateZ(-50px);
 }
 
-.hero-img {
+.parallax-layer-front {
+    position: relative;
     width: 100%;
-    height: auto;
-    display: block;
+    height: 100%;
+    z-index: 2;
+    transform: translateZ(50px);
+    transition: transform 0.1s ease-out;
+}
+
+#parallax-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 40px 80px rgba(0,0,0,0.8));
     mix-blend-mode: screen;
 }
 

@@ -30,13 +30,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Dynamic Blob Pulse (optional extra polish)
-const blob = document.querySelector('.blob');
-if (blob) {
+// 3D Mouse Parallax Effect
+const parallaxContainer = document.getElementById('parallax-container');
+const parallaxFront = document.querySelector('.parallax-layer-front');
+
+if (parallaxContainer && parallaxFront) {
     window.addEventListener('mousemove', (e) => {
-        const x = e.clientX / window.innerWidth;
-        const y = e.clientY / window.innerHeight;
-        blob.style.transform = `translate(${x * 20}px, ${y * 20}px)`;
+        const x = (window.innerWidth / 2 - e.clientX) / 25;
+        const y = (window.innerHeight / 2 - e.clientY) / 25;
+        
+        parallaxFront.style.transform = `translateZ(50px) rotateY(${x}deg) rotateX(${-y}deg)`;
     });
 }
 
