@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study | Ajith Pavan Reddy</title>
+    <!-- Google Fonts: Inter & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .cs-hero {
+            padding: 8rem 2rem 4rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .cs-tag {
+            color: var(--accent);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .cs-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .cs-section {
+            margin-bottom: 4rem;
+        }
+
+        .cs-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .cs-section p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: color 0.3s;
+        }
+
+        .back-btn:hover {
+            color: var(--text-primary);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="glass">
+        <div class="nav-content">
+            <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">AJITH PAVAN.</a>
+            <div class="nav-links">
+                <a href="index.html#work">Work</a>
+                <a href="resume.pdf" class="nav-resume">Resume</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <header class="cs-hero">
+            <a href="index.html#work" class="back-btn"><i data-lucide="arrow-left"></i> Back to Work</a>
+            <span class="cs-tag">Product Writing & Logic</span>
+            <h1 id="cs-title" style="font-size: 3.5rem; line-height: 1.1;">Designing for Real-Time Trust</h1>
+        </header>
+
+        <article class="cs-content">
+            <section class="cs-section">
+                <h2>The Challenge</h2>
+                <p>In a real-time chat environment, even a split-second delay can feel like a eternity. Users often
+                    encounter "dead zones" when messages fail to send or the connection drops, leading to repetitive
+                    clicking, frustration, and a lack of trust in the system's reliability.</p>
+            </section>
+
+            <section class="cs-section">
+                <h2>The Strategy</h2>
+                <p>My goal was to design for "graceful failure." I worked closely with the engineering team to
+                    understand the WebSocket and API timeout thresholds. I then mapped out the messaging logic for three
+                    states: Connecting, Sending, and Failed. The strategy was to provide constant, subtle feedback that
+                    keeps the user informed without being intrusive.</p>
+            </section>
+
+            <section class="cs-section">
+                <h2>The Solution & Microcopy</h2>
+                <p>I introduced progressive microcopy that changes based on the duration of the lag. Instead of a
+                    generic "Network Error," we used: <br>• 1-3 seconds: <em>"Sending..."</em> <br>• 4-10 seconds:
+                    <em>"Syncing your message..."</em> <br>• Failure: <em>"We couldn’t send that just now. Tap to try
+                        again."</em><br>By giving the system a "voice" during delays, we reduced the cognitive friction
+                    associated with waiting.</p>
+            </section>
+
+            <section class="cs-section">
+                <h2>Impact</h2>
+                <p>The feedback-led messaging significantly reduced double-posting (a common result of user frustration)
+                    and improved the perceived speed of the application. Users felt more in control of their
+                    communication, even during intermittent connectivity issues.</p>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2026 Ajith Pavan Reddy</p>
+            <div class="social-links">
+                <a href="https://github.com/ajithpavanreddy" target="_blank" aria-label="GitHub"><i
+                        data-lucide="github"></i></a>
+                <a href="https://linkedin.com/in/ajithpavanreddykambam" target="_blank" aria-label="LinkedIn"><i
+                        data-lucide="linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
